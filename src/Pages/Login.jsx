@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Login() {
@@ -14,9 +14,9 @@ function Login() {
         <div className=' text-center'>
             <h1>Login</h1>
             <div className=' mt-5 text-center'>
-                <input type="text" placeholder='enter Username' /> <br /> <br />
-                <input type="text" placeholder='enter password' /> <br /> <br />
-                <button className='btn btn-primary'>Login</button>
+                <input value={username} onChange={(e) => setusername(e.target.value)} type="text" placeholder='enter Username' /> <br /> <br />
+                <input value={password} onChange={(e) => setpassword(e.target.value)} type="text" placeholder='enter password' /> <br /> <br />
+                <button onClick={handlelogin} className='btn btn-primary'>Login</button>
                 <p>no account, then <Link to={"/register"}>register</Link></p>
                 
             </div>
